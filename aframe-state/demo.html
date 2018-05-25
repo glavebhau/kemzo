@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Aframe State Demo</title>
+    <script src="https://aframe.io/releases/0.8.2/aframe.js"></script>
+    <script src="./aframe-state-component.js"></script>
+    <script>
+
+      AFRAME.registerState({
+        initialState: {
+          shoppingList: [
+            {name: 'eggs', amount: 12, position: '0 0 5', color: 'red'},
+            {name: 'milk', amount: 2, position: '0 0 -5', color: 'blue'}
+          ]
+        }
+      });
+
+    </script>
+  </head>
+  <body>
+
+    <a-scene>
+
+      <a-sky color="black" ></a-sky>
+
+      <a-entity bind-for="for: shoppingItem; in: shoppingList; key: name">
+        <template>
+          <a-entity geometry="primitive: box" material="color: {{shoppingItem.color}}" 
+          position="{{shoppingItem.position}}" 
+                    data-amount="{{ shoppingItem.amount }}"></a-entity>
+        </template>
+      </a-entity>
+
+
+    </a-scene>
+
+  </body>
+
+</html>

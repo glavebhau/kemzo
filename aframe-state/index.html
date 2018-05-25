@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>My A-Frame Scene</title>
+    <script src="https://aframe.io/releases/0.8.2/aframe.js"></script>
+    <script src="./aframe-state-component.js"></script>
+    <script src="./main.js"></script>
+  </head>
+  <body>
+
+    <a-scene>
+
+      <a-sky src="360.jpg" ></a-sky>
+
+      <a-entity id="container"></a-entity>
+
+
+    </a-scene>
+
+  </body>
+  <script>
+    const el = document.getElementById("container");
+    const body = document.querySelector('body');
+    var template;
+    template = document.createElement('template');
+    template.setAttribute('id', 'shoppingItem');
+    template.innerHTML = `
+      <a-entity id="{{ shoppingItem.name }}" 
+          class="shoppingItem" 
+          geometry="primitive: box" 
+          material="color: {{shoppingItem.color}}" 
+          position="{{shoppingItem.position}}" 
+          data-amount="{{ shoppingItem.amount }}">
+      </a-entity>`;
+    body.appendChild(template);
+
+    el.setAttribute('bind-for', {
+      for: 'shoppingItem',
+      in: 'shoppingList',
+      template: '#shoppingItem',
+      key: 'name'
+    });
+
+  </script>
+
+</html>
