@@ -2,15 +2,15 @@ var initialState = {
   color: 'red',
   counter: 5,
   enabled: false,
-  shoppingList: [
-    {name: 'eggs', amount: 12, position: '0 0 5', color: 'red'},
-    {name: 'milk', amount: 2, position: '0 0 -5', color: 'blue'}
-  ],
+  shoppingList: {
+    key1: { name: 'eggs', amount: 12, position: '-2 0 -5', color: 'red' },
+    key2: { name: 'milk', amount: 2, position: '2 0 -5', color: 'blue' }
+  },
   nested: {
     enabled: false,
     enabled2: false
   },
-  position: {x: 0, y: 0, z: 0}
+  position: { x: 0, y: 0, z: 0 }
 };
 
 AFRAME.registerState({
@@ -19,6 +19,7 @@ AFRAME.registerState({
   handlers: {
     fooAdd: (state, payload) => {
       state.counter += payload.number;
+      console.log('fooAdd called : ', state.counter);
     },
 
     fooAddPropertyToNested: (state, payload) => {
@@ -55,11 +56,11 @@ AFRAME.registerState({
       state.position.z = payload.position.z;
     },
 
-    shoppingListAdd: (state) => {
-      state.shoppingList.push({name: 'bananas', amount: 6});
+    shoppingListAdd: (state, payload) => {
+      state.shoppingList.push(payload);
     },
 
-    shoppingListRemove: (state) => {
+    shoppingListRemove: state => {
       state.shoppingList.splice(0, 1);
     },
 
@@ -69,7 +70,8 @@ AFRAME.registerState({
     }
   },
 
-  computeState: function (state) {
+  computeState: function(state) {
+    console.log('computeState called : ', state);
     state.colorCounter = `${state.color}${state.counter}`;
   }
 });
