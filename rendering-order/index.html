@@ -1,0 +1,34 @@
+<script>
+document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
+</script>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/0.8.2/aframe.js"></script>
+  <script>
+  AFRAME.registerComponent('render-sort', {
+    init() {
+      this.el.renderer.sortObjects = false;
+    }
+  });
+
+  AFRAME.registerComponent('render-order', {
+    schema: {
+      renderOrder: { default: 0 }
+    },
+    init() {
+      this.el.object3D.children[0].renderOrder = this.data.renderOrder;
+    }
+  });
+  </script>
+</head>
+
+<body>
+  <a-scene render-sort="">
+    <a-sky id="sky" color="red" render-order="order: 2;"></a-sky>
+    <a-image id="avenger" src="avenger2.png" height="10" width="10" position="0 1.6 -9" transparent="true" render-order="renderOrder: 3;"></a-image>
+    <a-image id="sid" src="sid.jpg" height="5" width="5" position="0 1.6 -9" transparent="true" render-order="renderOrder: 5;"></a-image>
+  </a-scene>
+</body>
+
+</html>
