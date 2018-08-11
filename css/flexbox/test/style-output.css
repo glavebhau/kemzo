@@ -200,6 +200,8 @@ input::-moz-focus-inner {
 /* We start writing out flexbox here. The above is just page setup */
 .container {
   display: flex;
-  border: 10px solid mistyrose;
+  border: 10px solid red;
+  height: 100vh;
   justify-content: space-between;
+  flex-direction: column;
 }
