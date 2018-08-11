@@ -201,7 +201,7 @@ input::-moz-focus-inner {
 .container {
   display: flex;
   border: 10px solid red;
-  height: 100vh;
-  justify-content: space-between;
+  height: 600px;
+  justify-content: flex-end;
   flex-direction: column;
 }
