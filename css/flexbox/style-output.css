@@ -206,5 +206,6 @@ input::-moz-focus-inner {
 }
 
 .box {
-  width: 33.3333333%;
+  width: calc(33.3333333% - 40px);
+  margin: 20px;
 }
