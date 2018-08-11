@@ -1,0 +1,31 @@
+<script>
+document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
+</script>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/0.8.2/aframe.js"></script>
+</head>
+
+<body>
+  <a-scene stats>
+    <a-sky id="sky" color="red"></a-sky>
+  </a-scene>
+</body>
+<script>
+setTimeout(() => {
+
+  const sceneEl = document.querySelector('a-scene');
+  for (let i = 0; i < 100; i++) {
+    const el = document.createElement('a-image');
+    el.setAttribute("src", './Snowwy.jpg');
+    el.setAttribute("position", "0 0 -1000");
+    el.setAttribute("height", "1000");
+    el.setAttribute("width", "1000");
+    el.setAttribute("side", "double");
+    sceneEl.appendChild(el);
+  }
+}, 2000);
+</script>
+
+</html>

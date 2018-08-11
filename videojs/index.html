@@ -1,0 +1,48 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Videojs</title>
+
+  <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+
+  <script src="https://unpkg.com/video.js/dist/video.js"></script>
+  <script src="./videojs-contrib-hls.js"></script>
+
+  
+  <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+
+  <script src="s-video360.js"></script>
+
+  <script src="./c-video360-mesh.js"></script>
+  <script src="./c-video360-stream-handler.js"></script>
+
+</head>
+
+<body>
+  <a-scene>
+    <a-assets>
+      <video
+        id="innerVideo360HtmlEl"
+        className="video-js vjs-default-skin"
+        crossOrigin="Anonymous"
+        loop
+        webkit-playsinline="true"
+        playsInline
+        muted
+        src="https://s3.ap-south-1.amazonaws.com/pptvr-videos/video/private/qr2PrBUCYGTdvtMAuGqgN6g1ci72/5ae556ff4cf32e000fcef78b/widgetvideo/c9728f51-a889-3f7b-7e33-2facde78f48b.mp4"
+      />
+    </a-assets>
+
+    <a-entity
+      id="innerVideo360"
+      scale="1700 1700 1700"
+      data-opacity="1"
+      c-video360-stream-handler="videoElId: innerVideo360HtmlEl; autoPlay: true;streamUrl: https://s3.ap-south-1.amazonaws.com/pptvr-videos-mpd/video/private/80nXUvkutLWGxC00dElKYCzvrsB3/5ab8add52fcf21000f74eb4f/video360/360_0266_Stitch_XHC/cubemap/hls/playlist.m3u8"
+      c-video360-mesh="type: skybox; textureElId: innerVideo360HtmlEl_html5_api;"
+    />
+    <a-sky src="Snowwy.jpg"></a-sky>
+  </a-scene>
+</body>
+
+</html>

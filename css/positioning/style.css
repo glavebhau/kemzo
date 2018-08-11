@@ -1,0 +1,104 @@
+.wrapper {
+  background-color: #989797;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.services {
+  max-height: 150px;
+  overflow: hidden;
+}
+
+.services:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.service h2,
+.service p {
+  color: #999;
+  margin: 2%;
+  text-align: center;
+}
+
+.service {
+  float: left;
+  background: #eee;
+  width: 29.33%;
+  margin: 1%;
+  padding: 1%;
+  height: 140px;
+  display: inline-block;
+  position: relative;
+}
+
+.service:nth-child(1) {
+  top: 5px;
+}
+
+.service:nth-child(2) {
+  top: 15px;
+}
+
+.service:nth-child(3) {
+  top: 25px;
+}
+
+.content {
+  padding: 1%;
+  background: #ccc;
+}
+
+section,
+aside {
+  float: left;
+  width: 46%;
+  padding: 1%;
+  margin: 1%;
+  background-color: #f2f2f2;
+}
+
+.columns:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#banner {
+  max-height: 300px;
+  overflow: hidden;
+  margin: 1%;
+  position: relative;
+}
+
+#banner h2 {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+nav {
+  background: #333;
+  padding: 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+nav ul:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+nav li {
+  list-style-type: none;
+  margin: 0 10px;
+  color: #fff;
+  float: right;
+}

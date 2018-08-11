@@ -1,0 +1,90 @@
+body {
+  background-color: teal;
+  font-family: 'Quicksand';
+}
+.vr-greeting-card {
+  color: white;
+  /*background-color: grey;*/
+  width: 80%;
+  margin: 0 auto;
+  margin-top: calc(108 / 667 * 100vh);
+}
+
+header {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/*header h2,
+header p {
+  font-size: 1.5em;
+}*/
+
+input {
+  font-size: 1em;
+  color: white;
+  display: block;
+  margin: 1em auto;
+  width: 60%;
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  height: 1.5em;
+  margin-top: 1.5em;
+  outline: none;
+}
+
+/*input:nth-child(1) {
+  margin-top: 2.2em;
+}*/
+#name {
+  margin-top: 2.2em;
+}
+
+input.input-disabled {
+  pointer-events: none;
+}
+
+::placeholder {
+  color: white;
+  opacity: 0.36;
+}
+
+button {
+  font-size: 1em;
+  background-color: #ffffff;
+  display: block;
+  margin: 0 auto;
+  width: 60%;
+  border: none;
+  border-radius: 0.3em;
+  color: #5a6877;
+  height: 3em;
+  margin-top: 3em;
+}
+
+.share-btn-container {
+  margin-top: 6em;
+  transform: translate(50%);
+}
+
+.share-btn-container ul {
+  height: 3em;
+  padding: 0px;
+  display: inline-block;
+  transform: translate(-50%);
+}
+
+.share-btn-container li {
+  display: inline-block;
+  height: 100%;
+  margin: 0 0.1em;
+  border-radius: 7.48px;
+}
+
+.share-btn-container li img {
+  height: 100%;
+  border-radius: 7.48px;
+}
